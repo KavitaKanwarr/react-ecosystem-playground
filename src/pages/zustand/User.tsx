@@ -2,14 +2,16 @@ import { useZustandStore } from "../../store/zustandStore";
 
 const User = () => {
   console.log("User rendered"); // whencount changes but only when both are rendered simultaneously because below we subscribed to whole store not just user
+  //   const state = useZustandStore();
 
-  const state = useZustandStore();
+  const user = useZustandStore((state) => state.user);
+  const updateName = useZustandStore((state) => state.updateName);
 
   return (
     <div>
-      <h1>Name: {state.user.name}</h1>
-      <h3>Age: {state.user.age}</h3>
-      <button onClick={state.updateName}>Update Name</button>
+      <h1>Name: {user.name}</h1>
+      <h3>Age: {user.age}</h3>
+      <button onClick={updateName}>Update Name</button>
     </div>
   );
 };

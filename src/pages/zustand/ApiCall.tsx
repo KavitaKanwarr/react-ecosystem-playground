@@ -7,14 +7,7 @@ const ApiCall = () => {
   const fetchData = useZustandStore((state) => state.fetchGithubData);
 
   return (
-    <div
-      style={{
-        margin: "auto auto",
-        height: "100%",
-        width: "100%",
-        marginTop: "20px",
-      }}
-    >
+    <div className="container mt-20">
       {loading ? (
         "loading..."
       ) : data ? (

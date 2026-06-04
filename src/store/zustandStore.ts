@@ -72,9 +72,12 @@ export const useZustandStore = create<zustandStore>()(
                 const response = await fetch("https://api.github.com/emojis");
 
                 const jsonData = await response.json();
+                const limitedObject = Object.fromEntries(
+                  Object.entries(jsonData).slice(0, 40)
+                );
 
                 set({
-                  data: jsonData,
+                  data: limitedObject,
                   loading: false,
                 });
               } catch (error) {

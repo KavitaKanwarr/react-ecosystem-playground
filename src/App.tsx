@@ -4,6 +4,9 @@ import Home from "./pages/Home";
 import Count from "./pages/zustand/Count";
 import User from "./pages/zustand/User";
 import ApiCall from "./pages/zustand/ApiCall";
+import Parent from "./pages/context/Parent";
+import ThemeExample from "./pages/context/ThemeExample";
+import LanguageExample from "./pages/context/LanguageExample";
 
 function App() {
   return (
@@ -14,6 +17,9 @@ function App() {
           <Link to="/zustand">Zustand Count</Link>
           <Link to="/zustand/user">Zustand User</Link>
           <Link to="/zustand/api">Zustand Api Calls</Link>
+          <Link to="/context">Context</Link>
+          <Link to="/context/theme">Context Theme</Link>
+          <Link to="/context/language">Context Language</Link>
         </nav>
       </div>
 
@@ -23,6 +29,11 @@ function App() {
           <Route index element={<Count />} />
           <Route path="user" element={<User />} />
           <Route path="api" element={<ApiCall />} />
+        </Route>
+        <Route path="/context">
+          <Route index element={<Parent />} />
+          <Route path="theme" element={<ThemeExample />} />
+          <Route path="language" element={<LanguageExample />} />
         </Route>
       </Routes>
     </BrowserRouter>
