@@ -7,6 +7,7 @@ import ApiCall from "./pages/zustand/ApiCall";
 import Parent from "./pages/context/Parent";
 import ThemeExample from "./pages/context/ThemeExample";
 import LanguageExample from "./pages/context/LanguageExample";
+import MainRedux from "./pages/redux/MainRedux";
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
           <Link to="/context">Context</Link>
           <Link to="/context/theme">Context Theme</Link>
           <Link to="/context/language">Context Language</Link>
+          <Link to="/redux">Redux User</Link>
         </nav>
       </div>
 
@@ -35,6 +37,7 @@ function App() {
           <Route path="theme" element={<ThemeExample />} />
           <Route path="language" element={<LanguageExample />} />
         </Route>
+        <Route path="/redux" element={<MainRedux />} />
       </Routes>
     </BrowserRouter>
   );
