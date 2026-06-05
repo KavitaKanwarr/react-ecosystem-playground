@@ -1,7 +1,13 @@
 // Redux is a predictable state container.
 // reducers pure functions hona zaroori h bcz Isse debugging, testing, action replay aur time-travel debugging possible hoti hai. Small apps mein ye utna important nahi lagta, lekin large teams aur complex applications mein ye kaafi valuable hota hai.
 
-import { LOGIN, LOGOUT } from "./reduxConstants";
+import {
+  FETCH_EMOJIS,
+  FETCH_FAILED,
+  FETCH_SUCCESS,
+  LOGIN,
+  LOGOUT,
+} from "./reduxConstants";
 
 // Core elements:
 // 1. Store - Global State Container
@@ -25,11 +31,21 @@ import { LOGIN, LOGOUT } from "./reduxConstants";
 export type initialReduxState = {
   username: string;
   authorized: boolean;
+  data: {
+    loading: boolean;
+    fetchedData: unknown;
+    error: unknown;
+  };
 };
 
 const initialState = {
   username: "kkanwar",
   authorized: false,
+  data: {
+    loading: false,
+    fetchedData: null,
+    error: null,
+  },
 };
 
 export const userReducer = (
@@ -46,6 +62,32 @@ export const userReducer = (
       return {
         ...state,
         authorized: false,
+      };
+    case FETCH_EMOJIS:
+      return {
+        ...state,
+        data: {
+          ...state.data,
+          loading: true,
+        },
+      };
+    case FETCH_SUCCESS:
+      return {
+        ...state,
+        data: {
+          ...state.data,
+          loading: false,
+          fetchedData: action.payload,
+        },
+      };
+    case FETCH_FAILED:
+      return {
+        ...state,
+        data: {
+          ...state.data,
+          loading: false,
+          error: action.payload,
+        },
       };
     default:
       return state;
