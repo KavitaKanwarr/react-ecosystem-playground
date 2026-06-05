@@ -1,6 +1,7 @@
 // Redux is a predictable state container.
 // reducers pure functions hona zaroori h bcz Isse debugging, testing, action replay aur time-travel debugging possible hoti hai. Small apps mein ye utna important nahi lagta, lekin large teams aur complex applications mein ye kaafi valuable hota hai.
 
+import { produce } from "immer";
 import {
   FETCH_EMOJIS,
   FETCH_FAILED,
@@ -28,28 +29,18 @@ import {
 //             ↓
 //      subscribed Component Re-renders
 
-export type initialReduxState = {
+export type initialUserReduxState = {
   username: string;
   authorized: boolean;
-  data: {
-    loading: boolean;
-    fetchedData: unknown;
-    error: unknown;
-  };
 };
 
-const initialState = {
+const initialUserState = {
   username: "kkanwar",
   authorized: false,
-  data: {
-    loading: false,
-    fetchedData: null,
-    error: null,
-  },
 };
 
 export const userReducer = (
-  state: initialReduxState = initialState,
+  state: initialUserReduxState = initialUserState,
   action
 ) => {
   switch (action.type) {
@@ -63,33 +54,65 @@ export const userReducer = (
         ...state,
         authorized: false,
       };
-    case FETCH_EMOJIS:
-      return {
-        ...state,
-        data: {
-          ...state.data,
-          loading: true,
-        },
-      };
-    case FETCH_SUCCESS:
-      return {
-        ...state,
-        data: {
-          ...state.data,
-          loading: false,
-          fetchedData: action.payload,
-        },
-      };
-    case FETCH_FAILED:
-      return {
-        ...state,
-        data: {
-          ...state.data,
-          loading: false,
-          error: action.payload,
-        },
-      };
+    // case FETCH_EMOJIS:
+    //   return {
+    //     ...state,
+    //     data: {
+    //       ...state.data,
+    //       loading: true,
+    //     },
+    //   };
+    // case FETCH_SUCCESS:
+    //   return {
+    //     ...state,
+    //     data: {
+    //       ...state.data,
+    //       loading: false,
+    //       fetchedData: action.payload,
+    //     },
+    //   };
+    // case FETCH_FAILED:
+    //   return {
+    //     ...state,
+    //     data: {
+    //       ...state.data,
+    //       loading: false,
+    //       error: action.payload,
+    //     },
+    //   };
     default:
       return state;
   }
+};
+
+export type initialEmojisReduxState = {
+  loading: boolean;
+  fetchedData: unknown;
+  error: unknown;
+};
+
+const initialEmojisState = {
+  loading: false,
+  fetchedData: null,
+  error: null,
+};
+
+export const emojisReducer = (state = initialEmojisState, action) => {
+  // in order to use immer wrap reducer login in produce
+  return produce(state, (draft) => {
+    // 'draft' is a proxy copy of your state. You can safely "mutate" it!
+    switch (action.type) {
+      case FETCH_EMOJIS:
+        draft.loading = true;
+        break; // Use break instead of return statements
+      case FETCH_SUCCESS:
+        draft.loading = false;
+        draft.fetchedData = action.payload;
+        break;
+      case FETCH_FAILED:
+        draft.loading = false;
+        draft.error = action.payload;
+        break;
+    }
+  });
 };

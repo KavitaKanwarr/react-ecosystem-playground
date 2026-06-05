@@ -1,12 +1,11 @@
 import { useDispatch, useSelector } from "react-redux";
 import { login, logout } from "../../store/redux/reduxActions";
-import type { initialReduxState } from "../../store/redux/reduxReducer";
+import type { RootInitialState } from "../../store/redux/reduxStore";
 
 const ReduxUser = () => {
   const dispatch = useDispatch();
-  const username = useSelector((state: initialReduxState) => state.username);
-  const authorized = useSelector(
-    (state: initialReduxState) => state.authorized
+  const { username, authorized } = useSelector(
+    (state: RootInitialState) => state.user
   );
   const handleLogin = () => {
     dispatch(login);

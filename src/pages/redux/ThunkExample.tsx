@@ -1,12 +1,14 @@
 import { useDispatch, useSelector } from "react-redux";
-import type { initialReduxState } from "../../store/redux/reduxReducer";
 import { fetchEmojis } from "../../store/redux/reduxActions";
-import type { AppDispatch } from "../../store/redux/reduxStore";
+import type {
+  AppDispatch,
+  RootInitialState,
+} from "../../store/redux/reduxStore";
 
 const ThunkExample = () => {
   const dispatch = useDispatch<AppDispatch>();
   const { loading, fetchedData } = useSelector(
-    (state: initialReduxState) => state.data
+    (state: RootInitialState) => state.data
   );
 
   const getData = () => {
