@@ -1,3 +1,5 @@
+// INSTALL - redux and react-redux
+
 import { applyMiddleware, combineReducers, compose, createStore } from "redux";
 import {
   emojisReducer,
@@ -17,7 +19,7 @@ export const rootReducer = combineReducers({
 });
 
 const composeEnhancers =
-  (window as any).__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
+  (window as any).__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose; // Check if the browser extension is installed, otherwise fallback to standard Redux compose
 
 //  createStore(reducer, [preloadedState], [enhancer])
 //          First position (reducer): Requires a pure function that calculates your next state tree based on an action.

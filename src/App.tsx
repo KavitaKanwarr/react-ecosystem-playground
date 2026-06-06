@@ -8,6 +8,7 @@ import Parent from "./pages/context/Parent";
 import ThemeExample from "./pages/context/ThemeExample";
 import LanguageExample from "./pages/context/LanguageExample";
 import MainRedux from "./pages/redux/MainRedux";
+import MainRTK from "./pages/reduxToolkit/MainRTK";
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
           <Link to="/context/theme">Context Theme</Link>
           <Link to="/context/language">Context Language</Link>
           <Link to="/redux">Redux User</Link>
+          <Link to="/rtk">RTK</Link>
         </nav>
       </div>
 
@@ -38,6 +40,7 @@ function App() {
           <Route path="language" element={<LanguageExample />} />
         </Route>
         <Route path="/redux" element={<MainRedux />} />
+        <Route path="/rtk" element={<MainRTK />} />
       </Routes>
     </BrowserRouter>
   );

@@ -1,5 +1,5 @@
 // Redux is a predictable state container.
-// reducers pure functions hona zaroori h bcz Isse debugging, testing, action replay aur time-travel debugging possible hoti hai. Small apps mein ye utna important nahi lagta, lekin large teams aur complex applications mein ye kaafi valuable hota hai.
+// reducers (how to update the state) pure functions hona zaroori h bcz Isse debugging, testing, action replay aur time-travel debugging possible hoti hai. Small apps mein ye utna important nahi lagta, lekin large teams aur complex applications mein ye kaafi valuable hota hai.
 
 import { produce } from "immer";
 import {
@@ -99,6 +99,7 @@ const initialEmojisState = {
 
 export const emojisReducer = (state = initialEmojisState, action) => {
   // in order to use immer wrap reducer login in produce
+  // or we could simply write - export const emojisReducer = produce((draft, action) => {
   return produce(state, (draft) => {
     // 'draft' is a proxy copy of your state. You can safely "mutate" it!
     switch (action.type) {
