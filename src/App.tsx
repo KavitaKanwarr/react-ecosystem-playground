@@ -9,6 +9,7 @@ import ThemeExample from "./pages/context/ThemeExample";
 import LanguageExample from "./pages/context/LanguageExample";
 import MainRedux from "./pages/redux/MainRedux";
 import MainRTK from "./pages/reduxToolkit/MainRTK";
+import MainJotai from "./pages/jotai/MainJotai";
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
           <Link to="/context/language">Context Language</Link>
           <Link to="/redux">Redux User</Link>
           <Link to="/rtk">RTK</Link>
+          <Link to="/jotai">Jotai</Link>
         </nav>
       </div>
 
@@ -41,6 +43,7 @@ function App() {
         </Route>
         <Route path="/redux" element={<MainRedux />} />
         <Route path="/rtk" element={<MainRTK />} />
+        <Route path="/jotai" element={<MainJotai />} />
       </Routes>
     </BrowserRouter>
   );
