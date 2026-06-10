@@ -19,7 +19,7 @@ const JotaiUser = () => {
     <div className="my-20">
       <input type="text" value={user?.name} onChange={handleUserName} />
 
-      {data ? (
+      {!data ? (
         "loading..."
       ) : (
         <div

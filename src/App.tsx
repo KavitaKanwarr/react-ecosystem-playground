@@ -10,6 +10,8 @@ import LanguageExample from "./pages/context/LanguageExample";
 import MainRedux from "./pages/redux/MainRedux";
 import MainRTK from "./pages/reduxToolkit/MainRTK";
 import MainJotai from "./pages/jotai/MainJotai";
+import MainTanstack from "./pages/tanstack/MainTanstack";
+import EmojisTanstack from "./pages/tanstack/EmojisTanstack";
 
 function App() {
   return (
@@ -26,6 +28,8 @@ function App() {
           <Link to="/redux">Redux User</Link>
           <Link to="/rtk">RTK</Link>
           <Link to="/jotai">Jotai</Link>
+          <Link to="/tanstack">Tanstack/React Query</Link>
+          <Link to="/tanstack/emojis">Tanstack Emojis</Link>
         </nav>
       </div>
 
@@ -44,6 +48,8 @@ function App() {
         <Route path="/redux" element={<MainRedux />} />
         <Route path="/rtk" element={<MainRTK />} />
         <Route path="/jotai" element={<MainJotai />} />
+        <Route path="/tanstack" element={<MainTanstack />} />
+        <Route path="/tanstack/emojis" element={<EmojisTanstack />} />
       </Routes>
     </BrowserRouter>
   );
