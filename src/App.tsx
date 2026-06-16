@@ -12,6 +12,7 @@ import MainRTK from "./pages/reduxToolkit/MainRTK";
 import MainJotai from "./pages/jotai/MainJotai";
 import MainTanstack from "./pages/tanstack/MainTanstack";
 import EmojisTanstack from "./pages/tanstack/EmojisTanstack";
+import TanstackTodo from "./pages/tanstack/TanstackTodo";
 
 function App() {
   return (
@@ -30,6 +31,7 @@ function App() {
           <Link to="/jotai">Jotai</Link>
           <Link to="/tanstack">Tanstack/React Query</Link>
           <Link to="/tanstack/emojis">Tanstack Emojis</Link>
+          <Link to="/tanstack/todos">Tanstack Todos</Link>
         </nav>
       </div>
 
@@ -48,8 +50,11 @@ function App() {
         <Route path="/redux" element={<MainRedux />} />
         <Route path="/rtk" element={<MainRTK />} />
         <Route path="/jotai" element={<MainJotai />} />
-        <Route path="/tanstack" element={<MainTanstack />} />
-        <Route path="/tanstack/emojis" element={<EmojisTanstack />} />
+        <Route path="/tanstack">
+          <Route index element={<MainTanstack />} />
+          <Route path="emojis" element={<EmojisTanstack />} />
+          <Route path="todos" element={<TanstackTodo />} />
+        </Route>
       </Routes>
     </BrowserRouter>
   );
