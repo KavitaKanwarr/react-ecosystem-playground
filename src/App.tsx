@@ -13,6 +13,7 @@ import MainJotai from "./pages/jotai/MainJotai";
 import MainTanstack from "./pages/tanstack/MainTanstack";
 import EmojisTanstack from "./pages/tanstack/EmojisTanstack";
 import TanstackTodo from "./pages/tanstack/TanstackTodo";
+import MainReactHookForm from "./pages/reactHookFormWithZod/MainReactHookForm";
 
 function App() {
   return (
@@ -32,6 +33,7 @@ function App() {
           <Link to="/tanstack">Tanstack/React Query</Link>
           <Link to="/tanstack/emojis">Tanstack Emojis</Link>
           <Link to="/tanstack/todos">Tanstack Todos</Link>
+          <Link to="/rhf-zod">RHF with ZOD</Link>
         </nav>
       </div>
 
@@ -55,6 +57,7 @@ function App() {
           <Route path="emojis" element={<EmojisTanstack />} />
           <Route path="todos" element={<TanstackTodo />} />
         </Route>
+        <Route path="rhf-zod" element={<MainReactHookForm />} />
       </Routes>
     </BrowserRouter>
   );
