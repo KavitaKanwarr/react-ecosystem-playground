@@ -7,20 +7,14 @@ const ApiCall = () => {
   const fetchData = useZustandStore((state) => state.fetchGithubData);
 
   return (
-    <div className="container mt-20">
+    <div className="m-auto">
       {loading ? (
         "loading..."
       ) : data ? (
-        <div
-          style={{
-            display: "grid",
-            gridTemplateColumns: "repeat(auto-fill, minmax(10px, 1fr))",
-            gap: "16px",
-          }}
-        >
+        <div className="grid grid-cols-[repeat(auto-fit,minmax(30px,1fr))] gap-2  mb-3 [&>div]:border-1 [&>div]:border-gray-500 [&>div]:p-1">
           {Object.entries(data).map(([name, url]) => (
             <div key={name}>
-              <img src={url} alt={name} width={20} height={20} />
+              <img src={url} alt={name} />
             </div>
           ))}
         </div>

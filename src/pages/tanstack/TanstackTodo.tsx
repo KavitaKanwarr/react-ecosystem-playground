@@ -82,7 +82,7 @@ const TanstackTodo = () => {
   };
 
   return (
-    <>
+    <div className="m-auto">
       <h1>TODO List</h1>
       {data?.map((todo: typeTodo) => (
         <div key={todo.id} style={strikeThrough}>
@@ -98,7 +98,7 @@ const TanstackTodo = () => {
         />
         <button onClick={handleSetTodo}>Set Todo</button>
       </div>
-    </>
+    </div>
   );
 };
 

@@ -6,7 +6,7 @@ import RtkUser from "./RtkUser";
 const MainRTK = () => {
   return (
     <Provider store={store}>
-      <div className="container">
+      <div className="m-auto">
         <RtkCounter />
         <RtkUser />
       </div>

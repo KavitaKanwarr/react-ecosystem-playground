@@ -16,7 +16,7 @@ const ThunkExample = () => {
   };
 
   return (
-    <div className="container mt-20">
+    <div className="m-auto">
       {loading ? (
         "loading..."
       ) : fetchedData ? (

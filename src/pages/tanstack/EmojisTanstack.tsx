@@ -24,14 +24,8 @@ const EmojisTanstack = () => {
   if (error) return <p>{error?.message}</p>;
 
   return (
-    <div>
-      <div
-        style={{
-          display: "grid",
-          gridTemplateColumns: "repeat(auto-fill, minmax(10px, 1fr))",
-          gap: "16px",
-        }}
-      >
+    <div className="m-auto">
+      <div className="flex gap-2">
         {Object.entries(data ?? {}).map(([name, url]) => (
           <div key={name}>
             <img src={url} alt={name} width={20} height={20} />

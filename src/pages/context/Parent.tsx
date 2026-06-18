@@ -9,8 +9,8 @@ const Parent = () => {
 
   return (
     <MainContext.Provider value={{ theme, language }}>
-      <div className="container">
-        <div className="my-20">
+      <div className="m-auto">
+        <div>
           <button
             onClick={() =>
               setTheme((prev) => (prev === "light" ? "dark" : "light"))
@@ -26,7 +26,7 @@ const Parent = () => {
             Language Toggle
           </button>
         </div>
-        <div className="my-20">
+        <div>
           {/* ThemeExample will re-render when language changes because it's a consumer of value from provider and when language or theme changes the object reference of value changes which causes re-render of all consumers. Same is applicable for LanguageExample */}
           <ThemeExample />
           <LanguageExample />

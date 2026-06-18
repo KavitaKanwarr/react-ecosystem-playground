@@ -52,9 +52,9 @@ import DataTanstack from "./DataTanstack";
 const MainTanstack = () => {
   // see main.tsx to peek at the provider and setup
   return (
-    <>
+    <div className="m-auto">
       <DataTanstack />
-    </>
+    </div>
   );
 };
 

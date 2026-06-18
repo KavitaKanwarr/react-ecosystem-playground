@@ -15,7 +15,7 @@ const ReduxUser = () => {
   };
 
   return (
-    <div>
+    <div className="m-auto">
       {authorized ? (
         <>
           <h1>{username}</h1>

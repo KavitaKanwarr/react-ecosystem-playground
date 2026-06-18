@@ -4,7 +4,7 @@ import JotaiUser from "./JotaiUser";
 
 const MainJotai = () => {
   return (
-    <div className="container">
+    <div className="m-auto">
       <JotaiCounter />
       <JotaiChildCounter />
       <JotaiUser />

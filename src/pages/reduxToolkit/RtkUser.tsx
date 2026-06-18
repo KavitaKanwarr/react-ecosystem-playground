@@ -21,7 +21,7 @@ const RtkUser = () => {
   };
 
   return (
-    <div className="my-20">
+    <div className="m-auto">
       <h2>{name}</h2>
       <input
         type="text"

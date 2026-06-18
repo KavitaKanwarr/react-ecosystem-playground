@@ -71,7 +71,7 @@ const MainReactHookForm = () => {
   };
 
   return (
-    <div className="container">
+    <div className="m-auto">
       <form onSubmit={handleSubmit(onSubmit)}>
         {/* without zod, errors are messy objects */}
         {/* <input {...register("name", {

@@ -13,9 +13,9 @@ const Count = () => {
   const decrementCounter = useZustandStore((state) => state.decrementCounter);
 
   return (
-    <div className="container">
+    <div className="shadow-lg shadow-black/20 w-250 mx-auto my-auto">
       <div className="my-20">
-        <h2>{count}</h2>
+        <h2 className="text-3xl text-red-500 mb-4">{count}</h2>
         <button onClick={incrementCounter}>+</button>
         <button onClick={decrementCounter}>-</button>
       </div>

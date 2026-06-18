@@ -1,5 +1,4 @@
 import { BrowserRouter, Link, Route, Routes } from "react-router";
-import "./App.css";
 import Home from "./pages/Home";
 import Count from "./pages/zustand/Count";
 import User from "./pages/zustand/User";
@@ -14,12 +13,13 @@ import MainTanstack from "./pages/tanstack/MainTanstack";
 import EmojisTanstack from "./pages/tanstack/EmojisTanstack";
 import TanstackTodo from "./pages/tanstack/TanstackTodo";
 import MainReactHookForm from "./pages/reactHookFormWithZod/MainReactHookForm";
+// Applying tailwind, install using - npm install tailwindcss @tailwindcss/vite
 
 function App() {
   return (
     <BrowserRouter>
-      <div className="navbar">
-        <nav>
+      <div className="navbar bg-blue-100 py-4 px-6 border-b-2 border-blue-500 shadow-lg shadow-black/20">
+        <nav className="flex justify-center gap-3 [&>a]:text-blue-900 [&>a]:font-bold [&>a]:rounded-sm [&>a]:hover:bg-blue-300 [&>a]:p-1 [&>a]:transition [&>a]:duration-300">
           <Link to="/">Home</Link>
           <Link to="/zustand">Zustand Count</Link>
           <Link to="/zustand/user">Zustand User</Link>

@@ -1,24 +1,13 @@
-import reactLogo from "../assets/react.svg";
-import viteLogo from "../assets/vite.svg";
-import heroImg from "../assets/hero.png";
-
 const Home = () => {
   return (
-    <>
-      <div className="hero">
-        <img src={heroImg} className="base" width="170" height="179" alt="" />
-        <img src={reactLogo} className="framework" alt="React logo" />
-        <img src={viteLogo} className="vite" alt="Vite logo" />
-      </div>
-      <div>
-        <h1>Get started</h1>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test <code>HMR</code>
-        </p>
-      </div>
+    <div className="bg-pink-200 shadow-lg shadow-gray-200 m-auto w-1/2 p-10 rounded-lg cursor-pointer">
+      <h1 className="text-3xl text-pink-800 font-bold mb-3">
+        Let's Play with React Ecosystem
+      </h1>
+      <p className="text-lg text-pink-800 font-light">Are you Readyyyy!!</p>
 
       <div className="ticks"></div>
-    </>
+    </div>
   );
 };
 
